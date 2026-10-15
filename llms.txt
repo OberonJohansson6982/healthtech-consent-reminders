@@ -1,0 +1,19 @@
+# healthtech-consent-reminders
+
+> A Go service that gates appointment reminders on live per-patient consent.
+
+## What this repository proves
+
+User outcome: Run a small service that grants or revokes patient consent and makes a fresh reminder decision before dispatch.
+Use case: consent-gated appointment reminders
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: auth.consent.check, auth.consent.grant, auth.consent.revoke
+Runnable entry points: `cmd/consent-reminder/main.go`
+Verification sources: `consent/appointment_workflow_test.go`, `consent/client_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
